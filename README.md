@@ -44,4 +44,4 @@ This project demonstrates my ability to work with real-world data, perform data 
 (Add your screenshot here – dashboard/output image)
 
 ## 📫 Connect with me
-- LinkedIn: https://www.linkedin.com/in/your-link
+- LinkedIn: https://www.linkedin.com/in/srushti-kesare-0a68b2336?utm_source=share_via&utm_content=profile&utm_medium=member_android
