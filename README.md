@@ -40,8 +40,16 @@ This project focuses on analyzing data from an Agri Grocer dataset to extract me
 ## 🎯 Conclusion
 This project demonstrates my ability to work with real-world data, perform data cleaning, analysis, and extract actionable insights.
 
-## 📷 Output
-(Add your screenshot here – dashboard/output image)
+## 📊 Output / Results
+
+The data analysis revealed key business insights:
+
+- Identified high-performing product categories contributing maximum sales  
+- Observed patterns in sales trends across the dataset  
+- Analyzed customer purchasing behavior to understand demand  
+
+These insights can help in improving decision-making and optimizing product performance.
+
 
 ## 📫 Connect with me
 - LinkedIn: https://www.linkedin.com/in/srushti-kesare-0a68b2336?utm_source=share_via&utm_content=profile&utm_medium=member_android
