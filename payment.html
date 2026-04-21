@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<nav class="navbar">
+    <a href="/" class="{% if request.path=='/' %}active{% endif %}">Home</a>
+    <a href="/products" class="{% if '/products' in request.path %}active{% endif %}">Products</a>
+    <a href="/cart" class="{% if '/cart' in request.path %}active{% endif %}">My Cart</a>
+    <a href="/login" class="{% if '/login' in request.path %}active{% endif %}">Login</a>
+    <a href="/register" class="{% if '/register' in request.path %}active{% endif %}">Register</a>
+</nav>
+<h1>Payment Page</h1>
+
+<p>Select Payment Method:</p>
+<button>UPI</button>
+<button>Card</button>
+<button>Cash on Delivery</button>
+
+<br><br>
+
+<a href="/place_order">Confirm Payment</a>
+
+</body>
+</html>

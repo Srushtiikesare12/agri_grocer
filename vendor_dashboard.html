@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vendor Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+<nav class="navbar">
+    <a href="/" class="{% if request.path=='/' %}active{% endif %}">Home</a>
+    <a href="/products" class="{% if '/products' in request.path %}active{% endif %}">Products</a>
+    <a href="/cart" class="{% if '/cart' in request.path %}active{% endif %}">My Cart</a>
+    <a href="/login" class="{% if '/login' in request.path %}active{% endif %}">Login</a>
+    <a href="/register" class="{% if '/register' in request.path %}active{% endif %}">Register</a>
+</nav>
+<h2>Welcome, {{ vendor_name }}</h2>
+
+<h3>Your Products</h3>
+{% if products %}
+    <ul>
+    {% for product in products %}
+        <li>{{ product[2] }} - ₹{{ product[4] }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No products added yet.</p>
+{% endif %}
+
+<h3>Add New Product</h3>
+<form method="POST">
+    <input type="text" name="name" placeholder="Product Name" required><br><br>
+    <input type="text" name="description" placeholder="Description"><br><br>
+    <input type="number" name="price" placeholder="Price" required><br><br>
+    <input type="number" name="stock" placeholder="Stock" required><br><br>
+    <input type="text" name="image" placeholder="Image Filename"><br><br>
+    <button type="submit">Add Product</button>
+</form>
+
+</body>
+</html>

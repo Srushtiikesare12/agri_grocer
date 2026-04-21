@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vendor Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<nav class="navbar">
+    <a href="/" class="{% if request.path=='/' %}active{% endif %}">Home</a>
+    <a href="/products" class="{% if '/products' in request.path %}active{% endif %}">Products</a>
+    <a href="/cart" class="{% if '/cart' in request.path %}active{% endif %}">My Cart</a>
+    <a href="/login" class="{% if '/login' in request.path %}active{% endif %}">Login</a>
+    <a href="/register" class="{% if '/register' in request.path %}active{% endif %}">Register</a>
+</nav>
+<h2>Vendor Registration</h2>
+
+<form method="POST">
+    <input type="text" name="name" placeholder="Vendor Name" required><br><br>
+    <input type="email" name="email" placeholder="Email" required><br><br>
+    <input type="password" name="password" placeholder="Password" required><br><br>
+    <input type="text" name="shop_name" placeholder="Shop Name" required><br><br>
+    <button type="submit">Register</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<h2>Checkout</h2>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul style="color: green;">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<form method="POST" action="/checkout">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Address:</label><br>
+    <textarea name="address" required></textarea><br><br>
+
+    <label>Payment Method:</label><br>
+    <select name="payment_method" required>
+        <option value="UPI">UPI</option>
+        <option value="Card">Card</option>
+        <option value="Cash">Cash on Delivery</option>
+    </select><br><br>
+
+    <input type="submit" value="Proceed to Pay">
+</form>
+
+</body>
+</html>
